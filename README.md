@@ -23,5 +23,5 @@ Podés abrirlos con un editor de texto o ejecutarlos directamente desde pgAdmin.
 ## Autor
 
 - **Lourdes**
-- Estudiante de Ingeniería en Sistemas de Información – UTN FRBA
+- Estudiante de Ingeniería en Sistemas de Información – UTN FRBA  
  *Este repositorio fue creado con fines educativos y como parte de mi portfolio personal. Puede servir de referencia para quienes estén aprendiendo PostgreSQL.*
