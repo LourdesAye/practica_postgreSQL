@@ -50,7 +50,7 @@ def ejecutar_select(query, params=None):
     # Ejecuta el query con parámetros si hay, si no, con tupla vacía
     # si params viene como None, entonces pasa una tupla vacía. 
     # Esto es útil para que cur.execute() no falle aunque no le pasemos parámetros.
-    resultados = cur.fetchall()  # Trae todos los resultados
+    resultados = cur.fetchall()  # Trae todos los resultados como una lista de tuplas
     cur.close() # Cierra cursor
     conn.close()  # Cierra conexión
     return resultados # Devuelve los resultados

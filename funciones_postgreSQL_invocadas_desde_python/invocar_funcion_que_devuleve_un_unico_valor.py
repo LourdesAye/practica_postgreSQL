@@ -1,18 +1,24 @@
 from db_utils import ejecutar_select, ejecutar_modificacion
 
-# probando SELECT que invoca una funcion que devuelve un solo valor
-#query = "SELECT obtener_nombre_completo(%s::INTEGER);" este ok
-query = "SELECT obtener_nombre_completo(%s);" #esto ok
-params = (1,) # aca se debe poner una coma para interpretar que es una tupla, 
-# caso contrario se considera un caracter y eso no es valido, espera una tupla con elementos o una tupla vacia
-# params=("1",) este tambien ok 
+# probando SELECT que invoca una funcion que recibe un parametro y que devuelve un solo valor
 
-resultados = ejecutar_select(query, params)
+#query = "SELECT obtener_nombre_completo(%s::INTEGER);" este tambien sirve
+query = "SELECT obtener_nombre_completo(%s);" #este tambien sirve
 
-for fila in resultados:
-    print(fila)
+params = (1,) # aca se debe poner una coma para interpretar que es una tupla, sino se considera un caracter y eso no es valido, espera una tupla con elementos o una tupla vacia
+# params=("1",) este tambien sirve 
 
-# lo IMPORTANTE A NOTAS: cuando se usa query, pueden ser cadena de caracteres y dentro de ella haber 
+resultados = ejecutar_select(query, params) # me devuelve una lista de tuplas
+
+for fila in resultados: # fila es una tupla
+    print(fila) # me devuelve una tupla ('Lourdes Gomez',)
+    print(fila[0]) # me devuelve el contenido de la tupla :  Lourdes Gomez
+    print(fila[0][5]) # por ser cadena de caracteres me devuelve el elemento en pos 5: e
+
+# cuando se usa query, pueden ser cadena de caracteres y dentro de ella haber 
 # placeholders %s → como espacios vacíos.
 # El motor de base de datos se encarga de interpretar cada dato como texto, número, etc., 
 # sin ejecutarlo como código. Es mucho más seguro. Y no se colocan como texto directamente porque es poco seguro. 
+
+
+
